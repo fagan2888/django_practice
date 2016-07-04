@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from espnff import League
 
 data = {
     1: {
@@ -92,3 +93,4 @@ def index(request):
 
 def rankings(request):
     return render(request, 'personal/rankings.html', {'data': sorted(data.items())})
+

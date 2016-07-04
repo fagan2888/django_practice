@@ -1,28 +1,34 @@
 {% extends "personal/header.html" %}
 
 {% block content %}
-    <table class="table table-hover">
-        <caption>Week 1</caption>
-        <thead>
-            <tr>
-                <th>Rank</th>
-                <th>Team</th>
-                <th>Wins</th>
-                <th>Loses</th>
-                <th>Power Points</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for key, value in data %}
-                <tr>
-                    <td>{{key}}</td>
-                    {% for info, v in value.items %}
-                        {% if info != "previous rank" %}
-                            <td>{{v}}</td>
-                        {% endif %}
+    <div class="row">
+        <center>
+        <div class="col-md-8">
+            <table class="table table-hover">
+                <caption>Week 1</caption>
+                <thead>
+                    <tr>
+                        <th>Rank</th>
+                        <th>Team</th>
+                        <th>Wins</th>
+                        <th>Loses</th>
+                        <th>Power Points</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for key, value in data %}
+                        <tr>
+                            <td>{{key}}</td>
+                            {% for info, v in value.items %}
+                                {% if info != "previous rank" %}
+                                    <td>{{v}}</td>
+                                {% endif %}
+                            {% endfor %}
+                        </tr>
                     {% endfor %}
-                </tr>
-            {% endfor %}
-        </tbody>
-    </table>
+                </tbody>
+            </table>
+        </div>
+        </center>
+    </div>
 {% endblock %}
